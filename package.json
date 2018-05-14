@@ -1,8 +1,6 @@
 {
   "name": "y",
-  "version": "1.0.0",
-  "description": "",
-  "main": "handler.js",
+  "version": "0.1.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +15,8 @@
   },
   "homepage": "https://github.com/juliantellez/serverless-markdown-parser#readme",
   "devDependencies": {
-    "serverless-mocha-plugin": "^1.8.0"
+    "chai": "^4.1.2",
+    "mocha": "^5.1.1",
+    "sinon": "^5.0.7"
   }
 }
