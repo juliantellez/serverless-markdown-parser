@@ -59,4 +59,10 @@ describe('markdownParser', () => {
 
     chai.assert.deepEqual(value, expected)
   })
+  it('should parse markdown without metadata', () => {
+      const mock = '# Serverless Blog'
+      const value = markdownParser(mock)
+      const expected = { content: '<h1 id="serverless-blog">Serverless Blog</h1>\n' }
+      chai.assert.deepEqual(value, expected)
+  })
 })

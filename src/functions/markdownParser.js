@@ -12,31 +12,33 @@ const parseMetadata = string => {
     return metadata
 }
 
-const stripMetadata = markdown => {
+const stripData = (markdown = '') => {
     const TAG_START = '<!--metadata'
     const TAG_END = '-->'
-    let [
-        metadata, 
-        content
-    ] = markdown.split(TAG_START)[1].split(TAG_END)
+    const rawMetadata = markdown.split(TAG_START)[1] || ''
 
-    metadata = parseMetadata(metadata)
+    const [
+        metadata = {}, 
+        rawContent = markdown
+    ] = rawMetadata.split(TAG_END)
+    
+    const parsedMetadata = parseMetadata(metadata)
 
     return {
-        metadata,
-        content
+        rawContent,
+        parsedMetadata,
     }
 }
 
 const markdownParser = (markdown) => {
     const {
-        metadata,
-        content
-    } = stripMetadata(markdown)
+        rawContent,
+        parsedMetadata,
+    } = stripData(markdown)
     
     return {
-        ...metadata,
-        content: parseMarkdown(content)
+        ...parsedMetadata,
+        content: parseMarkdown(rawContent),
     }
 }
 
