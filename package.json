@@ -2,7 +2,8 @@
   "name": "y",
   "version": "0.1.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --opts ./mocha.opts",
+    "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,9 @@
     "chai": "^4.1.2",
     "mocha": "^5.1.1",
     "sinon": "^5.0.7"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "marked": "^0.3.19"
   }
 }
