@@ -53,9 +53,7 @@ describe('markdownParser', () => {
   })
   it('should parse markdown with malformed JSON', () => {
     const value = markdownParser(mockDataBadJSON)
-    const expected ={
-        content: '<h1 id="serverless-blog">Serverless Blog</h1>\n' 
-    }
+    const expected = { content: '<h1 id="serverless-blog">Serverless Blog</h1>\n' }
 
     chai.assert.deepEqual(value, expected)
   })
