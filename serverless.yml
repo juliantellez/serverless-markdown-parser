@@ -55,8 +55,8 @@ provider:
 #    - exclude-me-dir/**
 
 functions:
-  parseMarkdown:
-    handler: handler.parseToHtml
+  markdownParser:
+    handler: src/functions/markdownParser/markdownParserHandler.markdownParser
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
